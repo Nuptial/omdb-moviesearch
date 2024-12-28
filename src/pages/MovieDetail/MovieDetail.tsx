@@ -10,21 +10,10 @@ import {
   Box,
 } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
+import { Movie } from "./MovieDetail.interfaces";
 
 const OMDB_API_KEY = "2aaab96c";
 const OMDB_BASE_URL = "https://www.omdbapi.com/";
-
-interface Movie {
-  Title: string;
-  Year: string;
-  Runtime: string;
-  Genre: string;
-  Director: string;
-  Actors: string;
-  Plot: string;
-  imdbRating: string;
-  Poster: string;
-}
 
 const MovieDetail: React.FC = () => {
   const [movie, setMovie] = useState<Movie | null>(null);

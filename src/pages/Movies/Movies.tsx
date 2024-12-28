@@ -14,27 +14,14 @@ import { setPage, setYear, setQuery } from "../../slices/appSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import MovieCard from "../../components/MovieCard/MovieCard";
+import { ApiResponse, Movie } from "./Movies.interfaces";
 
 const OMDB_API_KEY = "2aaab96c";
 const OMDB_BASE_URL = "https://www.omdbapi.com/";
 
-interface Movie {
-  imdbID: string;
-  Title: string;
-  Year: string;
-  Poster: string;
-}
-
-interface ApiResponse {
-  Search: Movie[];
-  Response: string;
-  Error?: string;
-  totalResults: string;
-}
-
 const itemsPerPage = 10;
 
-const ListingPage: React.FC = () => {
+const Movies: React.FC = () => {
   const query = useSelector((state: RootState) => state.appStore.query);
   const page = useSelector((state: RootState) => state.appStore.page);
   const year = useSelector((state: RootState) => state.appStore.year);
@@ -210,4 +197,4 @@ const ListingPage: React.FC = () => {
   );
 };
 
-export default ListingPage;
+export default Movies;
