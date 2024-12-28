@@ -174,7 +174,7 @@ const ListingPage: React.FC = () => {
               variant="outlined"
               value={query}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                setPage(1);
+                dispatch(setPage(1));
                 handleQueryChange(e);
               }}
               sx={{
@@ -190,7 +190,7 @@ const ListingPage: React.FC = () => {
               variant="outlined"
               value={year}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                setPage(1);
+                dispatch(setPage(1));
                 handleYearChange(e);
               }}
               type="number"
